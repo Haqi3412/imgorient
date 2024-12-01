@@ -2,7 +2,7 @@
 
 ## Usage
 ```
-python orientpy.py <img_path>
+orientpy <img_path>
 ```
 
 ## Example

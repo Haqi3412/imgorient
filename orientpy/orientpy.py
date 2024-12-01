@@ -13,13 +13,17 @@ from .version import __version__
 
 @click.command()
 @click.argument("img_path", type=click.Path(exists=True), required=False)
-@click.option("--version", "-v", is_flag=True, help="Show version")
+@click.option("--radian", "-r", is_flag=True, help="Output angle in radian.")
+@click.option("--version", "-v", is_flag=True, help="Show version.")
 # TODO: 長方形の場合にも対応させる
 # TODO: 配向の矢印がついた画像を出力する機能を追加する
-def main(img_path, version):
+def main(img_path, version, radian):
     if version:
         logger.info(f"v{__version__}")
         exit(0)
+    if img_path is None:
+        logger.error("Input image path is required")
+        exit(1)
     img = cv2.imread(img_path)
     h, w = img.shape[:2]
     if h != w:
@@ -85,7 +89,10 @@ def main(img_path, version):
         major_vec = vecs[:,0]
 
     intensity = (major_axis - minor_axis)/(major_axis + minor_axis)
-    angle = np.rad2deg(np.arctan(major_vec[1]/major_vec[0]))
+    #angle = np.rad2deg(np.arctan(major_vec[1]/major_vec[0]))
+    angle = np.arctan(major_vec[1]/major_vec[0])
+    if not radian:
+        angle = np.rad2deg(np.arctan(major_vec[1]/major_vec[0]))
     print(f"angle: {angle}\nintensity: {intensity}")
 
 if __name__ == "__main__":   
