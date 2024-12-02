@@ -9,6 +9,7 @@ logger.remove()
 logger.add(sys.stderr, level="INFO", format="{level}: {message}")
 
 from .version import __version__
+
 ######################################
 
 @click.command()
@@ -89,7 +90,6 @@ def main(img_path, version, radian):
         major_vec = vecs[:,0]
 
     intensity = (major_axis - minor_axis)/(major_axis + minor_axis)
-    #angle = np.rad2deg(np.arctan(major_vec[1]/major_vec[0]))
     angle = np.arctan(major_vec[1]/major_vec[0])
     if not radian:
         angle = np.rad2deg(np.arctan(major_vec[1]/major_vec[0]))
