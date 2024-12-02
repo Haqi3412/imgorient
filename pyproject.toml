@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "orientpy"
+name = "imgorient"
 version = "1.0.0"
 description = "Calculate the orientation of an image."
 authors = []
@@ -19,4 +19,4 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry.scripts]
-orientpy = "orientpy:main"
+imgorient = "imgorient:main"

@@ -1,8 +1,8 @@
-# orientpy
+# imgorient
 
 ## Usage
 ```
-orientpy <img_path>
+imgorient <img_path>
 ```
 
 ## Example
@@ -13,7 +13,7 @@ orientpy <img_path>
 
 ### command
 ```
-orientpy ./img/syokki_hashi_man.png
+imgorient ./img/syokki_hashi_man.png
 ```
 ### output
 ```
