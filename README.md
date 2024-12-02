@@ -1,5 +1,11 @@
 # imgorient
 
+## Install
+
+```
+pip install imgorient
+```
+
 ## Usage
 ```
 imgorient <img_path>
@@ -11,11 +17,11 @@ imgorient <img_path>
 
 <img src="./img/syokki_hashi_man.png" width="300">
 
-### command
+### Command
 ```
 imgorient ./img/syokki_hashi_man.png
 ```
-### output
+### Output
 ```
 angle: 47.325422492344984
 intensity: 0.6059812726967501
