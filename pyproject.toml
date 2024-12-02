@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "orientpy"
 version = "1.0.0"
-description = ""
+description = "Calculate the orientation of an image."
 authors = []
 readme = "README.md"
 
